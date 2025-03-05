@@ -1,0 +1,16 @@
+<form method="get">
+    <input type="text" name="q" placeholder="ค้นหาคอร์ส" value="{{ search_term }}">
+    <button type="submit">ค้นหา</button>
+</form>
+
+<h2>ผลการค้นหา</h2>
+
+{% if courses %}
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>ไม่พบข้อมูลที่คุณค้นหา</p>
+{% endif %}
